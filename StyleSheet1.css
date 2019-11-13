@@ -2,3 +2,10 @@
     padding: 0px;
     margin: 0px;
 }
+
+#side{
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(75, 75, 75), black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
