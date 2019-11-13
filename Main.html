@@ -8,10 +8,31 @@
 </head>
 <body>
     <div id="side">
-        <div class="header"></div>
-        <div class="meny"></div>
-        <div class="mainContent"></div>
-        <div class="footer"></div>
+        <div id="header">Film Data</div>
+        <div id="meny">MENY</div>
+        <div id="mainContent">
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+            <div class="container">placeholder</div>
+        </div>
+        <div id="footer">Copyright 2019, Film Data AS</div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
@@ -51,10 +72,10 @@
                         console.log(FilmDataSnapshot.data);
                     });
 
-                html += '</ul>';
-                document.getElementById('side').innerHTML = html;
+                // html += '</ul>';
+                // document.getElementById('side').innerHTML = html;
             });
-        </script>
+    </script>
     <script src="LeggInnFilm.js"></script>
 </body>
 </html>
