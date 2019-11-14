@@ -4,21 +4,6 @@ const sjangerValg = document.getElementById(["F", "R", "A", "K", "D", "FA", "DO"
 let userInput = document.getElementById('sjangerValg');
 
 
-function Menu() {
-    <select id="sjangerValg" onchange="showDiv(this)">
-        <option selected value="Menu">Meny</option>
-        <option id="F" value="sjanger">Favoritter</option>
-        <option id="R" value="Sjanger1">Romantikk</option>
-        <option id="A" value="sjanger2">Action</option>
-        <option id="K" value="sjanger3">Komedie</option>
-        <option id="D" value="sjanger4">Drama</option>
-        <option id="FA" value="sjanger5">Fantasy</option>
-        <option id="DO" value="sjanger6">Dokummentar</option>
-    </select>
-
-}
-
-
 function showDiv(element) {
     if
         (element.value == "sjanger") {
