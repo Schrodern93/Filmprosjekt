@@ -2,38 +2,40 @@
 
 const sjangerValg = document.getElementById(["F", "R", "A", "K", "D", "FA", "DO"]);
 let userInput = document.getElementById('sjangerValg');
+let info = 'tekst bare';
 
 
 function showDiv(element) {
     if
         (element.value == "sjanger") {
-        maincontent.document.getElementById("maincontent").innerHTML = Favoritter[F];
+        document.getElementById("mainContent").innerHTML = Favoritter[F];
+        //
         
     }
     if (element.value == "sjanger1") {
-        maincontent.document.getElementById("maincontent").innerHTML = Romantikk[R];
+        document.getElementById("mainContent").innerHTML = Romantikk[R];
        
     }
     if (element.value == "sjanger2") {
-        maincontent.document.getElementById("maincontent").innerHTML = Action[A];
+        document.getElementById("mainContent").innerHTML = Action[A];
 
     }
     if (element.value == "sjanger3") {
-        maincontent.document.getElementById("maincontent").innerHTML = Komedie[K];
+        document.getElementById("mainContent").innerHTML = Komedie[K];
 
     }
     if (element.value == "sjanger4") {
-        maincontent.document.getElementById("maincontent").innerHTML = Drama[D];
+        document.getElementById("mainContent").innerHTML = Drama[D];
 
     }
     if (element.value == "sjanger5") {
-        maincontent.document.getElementById("maincontent").innerHTML = Fantasy[FA];
+        document.getElementById("mainContent").innerHTML = Fantasy[FA];
 
     }
     if (element.value == "sjanger6") {
 
-        maincontent.document.getElementById("maincontent").innerHTML = Dokummentar[DO];
+        document.getElementById("mainContent").innerHTML = Dokummentar[DO];
     }
 }
 
-main();
+// main();
