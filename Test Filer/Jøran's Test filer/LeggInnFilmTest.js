@@ -4,19 +4,17 @@ function showAddMovies() {
 				<tr>
 					<th>Tittel</th>
 					<th>Spilletid</th>
-					<th>Utigvelses dato</th>
 					<th>Sjanger</th>
 					<th>Favoritt</th>
 				</tr>
 				<tr>
-					<th><input id="movie" type="text"/></th>
-					<th><input id="playTime" type="number" /></th>
-					<th><input id="releaseDate" type="dropdown"/></th>
-					<th><input id="genre" type="dropdown"/></th>
-					<th><input id="Favorite" type="chechbox"/></th>
-					<th><input id="addMovieButton" type="button"/></th>
-				</tr>
-				`
+					<td><input id="inputTittel" type="text"/></td>
+					<td><input id="inputSpilletid" type="number" /></td>
+					<td><input id="inputSjanger" type="dropdown"/></td>
+					<td><input id="inputFavoritt" type="checkbox" /></td>
+					<td><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
+				</tr>`
+	taskTable.innerHTML = html;
 }
 
 function createHtmlRow() {
