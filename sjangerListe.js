@@ -1,5 +1,5 @@
 // JavaScript source code
-Lode();
+load();
 
 let all [] = FilmData;
 console.log(all);
