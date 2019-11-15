@@ -80,20 +80,40 @@
                 let html = '<ul>';
                 snapshot.forEach(
                     function (FilmDataSnapshot) {
-                        let FilmData = FilmDataSnapshot.data();
-                        html += '<li>' + FilmData.Tittel + ' (' + FilmData.Sjanger + ')' + '(' + FilmData.Spilletid +  ' min )' + '(' + FilmData.Favoritt + ')</li>';
-
+                        let filmData = FilmDataSnapshot.data();
+                        // html += '<li>' + FilmData.Tittel + ' (' + FilmData.Sjanger + ')' + '(' + FilmData.Spilletid +  ' min )' + '(' + FilmData.Favoritt + ')</li>';
+                        showMovies();
                         console.log(FilmDataSnapshot.data);
                     });
 
-                html += '</ul>';
+                // html += '</ul>';
                 // return html;
                 // document.getElementById('mainContent').innerHTML = html;
                 // document.getElementById('side').innerHTML = html;
+                function showMovies(){
+        
+                    for (i = 0; i < filmData.length; i ++){
+                        if (filmData[i].Favoritt == true){
+                            yayOrNay = '♥';
+                        }
+                        else {
+                            yayOrNay = '♡';
+                        }
+                        html += `<div class="container">
+                                    <h3.title>${filmData[i.Tittel]}</h3.title>
+                                    <p.sjanger>${filmData[i.Sjanger]}</p.sjanger>
+                                    <p.spilletid>${filmData[i.Spilletid]}</p.spilletid>
+                                    <div.favoritt>${yayOrNay}</div.favoritt></div>`
+                    }
+                
+                    mainC.innerHTML = html;
+                    console.log(html);
+                }
             });
            
             showDiv();
             </script>
+    <!-- <script src="makeContainer.js"></script> -->
     <script src="LeggInnFilm.js"></script>
     <!-- <script src="Meny.js" charset="utf-8"></script> -->
 </body>
