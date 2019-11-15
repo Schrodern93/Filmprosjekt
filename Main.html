@@ -75,9 +75,9 @@
         firebase.analytics();
         let db = firebase.firestore(); // mulig const eller var
         let html = '';
-        const docRef = db.doc("FilmData");
-        const loadButton = document.querySelector("#loadButton");
-        const Data = ''; 
+        //const docRef = db.doc("FilmData");
+        //const loadButton = document.querySelector("#loadButton");
+        //const Data = ''; 
         var userCollection = db.collection('FilmData');
         userCollection.orderBy('Tittel').onSnapshot(
             function (snapshot) {
