@@ -32,39 +32,42 @@ function LeggInn() {
 //    });
 //});
 function showAddMovies() {
+	let movieBox = document.getElementById('addMovieBox');
 	let html = `
-		<div id="addMovieBox">
-			<table>
-					<tr>
-						<th>Tittel</th>
-						<th>Spilletid</th>
-						<th>Sjanger</th>
-						<th>Favoritt</th>
+		<p class="addMovieHeader">Legg til film</p><br/>
+		<hr class="addMovieHr"/>
+			<table class="addMovieTable">
+				<tr>
+				<th>Tittel</th>
+				<th>Spilletid</th>
+					<th>Sjanger</th>
+					<th>Favoritt</th>
 					</tr>
-					<tr>
-						<td><input id="inputTittel" type="text"/></td>
-						<td><input id="inputSpilletid" type="number" /></td>
-						<td><input id="inputSjanger" type="text"/></td>
-						<td><input id="inputFavoritt" type="checkbox" /></td>
-						<td><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
+				<tr>
+				<td><input id="inputTittel" type="text"/></td>
+				<td><input id="inputSpilletid" type="number" /></td>
+					<td><input id="inputSjanger" type="text"/></td>
+					<td><input id="inputFavoritt" type="checkbox" /></td>
+					<td><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
 					</tr>
-			</table>
-		</div>
-`
-	//taskTable.innerHTML = html;
+			</table><p id="addMovieClose" onclick="removeMovieBox()">X</p>
+						
+						`;
+	movieBox.innerHTML = html;
+	
 }
 
 let inputTittle = document.getElementById('inputTittel');
 let inputSpilletid = document.getElementById('inputSpilletid');
 let inputSjanger = document.getElementById('inputSjanger');
-let inputFavorit = document.getElementById('inputFavorit');
+let inputFavorit = document.getElementById('inputFavoritt');
 
 function LeggInn() {
 	filmData.push({
-		filmTittel: inputTittle.value,
-		spilletid: inputSpilletid.value,
-		sjanger: inputSjanger.value,
-		favorit: inputFavorit.value,
+		Tittel: inputTittle.value,
+		Spilletid: parseInt(inputSpilletid.value),
+		Sjanger: inputSjanger.value,
+		Favoritt: inputFavorit.checked,
 	});
 	//inputTittle.value = '';
 	//inputSpilletid.value = '';
@@ -74,23 +77,26 @@ function LeggInn() {
 }
 function addMovieBox() {
 	let mContent = document.getElementById('mainContent');
-	showAddMovies()
+	let boxHTML = '<div id="addMovieBox"></div>';
 
-	let html = `
-		
-		<p class="addMovieHeader">Legg til film</p> <p class="close" onclick="removeMovieBox()">X</p>
-		<p>Her kommer Jøran's HTML</p>
-		</div>`;
-
-	mContent.innerHTML += html;
+	if (mContent.innerHTML.includes('<div id="addMovieBox">')){
+		removeMovieBox();
+		blurUnblur('gridContainer')
+	}
+	else {
+		mContent.innerHTML += boxHTML;
+		showAddMovies();
+	}
+	blurUnblur('gridContainer')
 }
 
 function removeMovieBox() {
 	let movieBox = document.getElementById('addMovieBox');
 	movieBox.remove();
+	blurUnblur('gridContainer')
 }
 
-function blur(elementID) {
-	selectedClass = document.getElementById(elementID);
-	selectedClass.classList.add(blur);
+function blurUnblur(elementId) {
+	let selectedId = document.getElementById(elementId);
+	selectedId.classList.toggle('blur');
 }

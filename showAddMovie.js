@@ -1,5 +1,3 @@
-let movieContainers = document.getElementById('gridContainer');
-
 function addMovieBox(){
     let mContent = document.getElementById('mainContent');
 
@@ -16,7 +14,7 @@ function addMovieBox(){
 function removeMovieBox(){
     let movieBox = document.getElementById('addMovieBox');
     movieBox.remove();
-    blurOrUnblur('gridContainer')
+    blurOrUnblur('gridContainer');
 }
 
 function blurOrUnblur(elementId){
