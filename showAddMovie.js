@@ -4,7 +4,7 @@ function addMovieBox(){
     let mContent = document.getElementById('mainContent');
 
     let html = `
-        <div id="addMovieBox">
+        
         <p class="addMovieHeader">Legg til film</p> <p class="close" onclick="removeMovieBox()">X</p>
         <p>Her kommer Jøran's HTML</p>
         </div>`;

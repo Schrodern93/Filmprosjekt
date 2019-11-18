@@ -4,26 +4,31 @@
 <head>
     <meta charset="utf-8" />
     <title>Film Data</title>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="Firestore.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="StyleSheet1.css">
-    <script src="Meny.js" charset="utf-8"></script>
-    
+    <script src="genres.js" charset="utf-8"></script>
+    <script src="undermeny.js" charset="utf-8"></script>
+
 </head>
 <body>
     <div id="side">
         <div id="header">Film Data</div>
         <div id="meny">
-            <h1>Meny Valg</h1>
-            <div id="optionhtml"></div>
+            <h4>Meny Valg</h4>
+            <div id="option"></div>
+            <!--<div w3-include-html="undermeny.html"></div>-->
             <!--<select id="sjangerValg" onchange="showDiv(this)">
-                <option selected value="Meny">Alle</option>
-                <option id="F" value="sjanger">Favoritter</option>
-                <option id="R" value="Sjanger1">Romantikk</option>
-                <option id="A" value="sjanger2">Action</option>
-                <option id="K" value="sjanger3">Komedie</option>
-                <option id="D" value="sjanger4">Drama</option>
-                <option id="FA" value="sjanger5">Fantasy</option>
-                <option id="DO" value="sjanger6">Dokkumentar</option>
-            </select>-->
+        <option selected value="Meny">Alle</option>
+        <option id="F" value="sjanger">Favoritter</option>
+        <option id="R" value="Sjanger1">Romantikk</option>
+        <option id="A" value="sjanger2">Action</option>
+        <option id="K" value="sjanger3">Komedie</option>
+        <option id="D" value="sjanger4">Drama</option>
+        <option id="FA" value="sjanger5">Fantasy</option>
+        <option id="DO" value="sjanger6">Dokkumentar</option>
+    </select>-->
             <button id="loadButton">load</button>
             <p id="addMovieText" onclick="addMovieBox(show)">Legg til film</p>
         </div>
@@ -71,82 +76,41 @@
         </div>
         <div id="footer">Copyright 2019, Film Data AS</div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+   <script>
+       //meny();
+       //let text = meny();
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!--<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>-->
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyDJudofDYHe6jAavBq2Ei9O0lCMzNkVfZc",
-            authDomain: "fir-test-e989e.firebaseapp.com",
-            databaseURL: "https://fir-test-e989e.firebaseio.com",
-            projectId: "fir-test-e989e",
-            storageBucket: "fir-test-e989e.appspot.com",
-            messagingSenderId: "309319920225",
-            appId: "1:309319920225:web:9fcb3b7ba171ffdcccd820",
-            measurementId: "G-KBVXLJ3PNW"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        let db = firebase.firestore(); // mulig const eller var
-        let html = '';
-        //const docRef = db.doc("FilmData");
-        //const loadButton = document.querySelector("#loadButton");
-        //const Data = ''; 
-        var userCollection = db.collection('FilmData');
-        userCollection.orderBy('Tittel').onSnapshot(
-            function (snapshot) {
-                let html = '<ul>';
-                snapshot.forEach(
-                    function (FilmDataSnapshot) {
-                        // let filmData = FilmDataSnapshot.data();
-                        // html += '<li>' + FilmData.Tittel + ' (' + FilmData.Sjanger + ')' + '(' + FilmData.Spilletid +  ' min )' + '(' + FilmData.Favoritt + ')</li>';
-                        let FilmData = FilmDataSnapshot.data();
-                        html += '<li>' + FilmData.Tittel + ' (' + FilmData.Sjanger + ')' + '(' + FilmData.Spilletid + ' min )' + '(' + FilmData.Favoritt + ')</li>';
-                        
-                        console.log(FilmDataSnapshot.data);
-                        showMovies();
-                    });
-
-                // html += '</ul>';
-                // return html;
-                // document.getElementById('mainContent').innerHTML = html;
-                // document.getElementById('side').innerHTML = html;
-                function showMovies(){
+       document.getElementById('option').innerHTML = createSelect();
+   </script>
+    <!--<script>
         
-                    for (i = 0; i < filmData.length; i ++){
-                        if (filmData[i].Favoritt == true){
-                            yayOrNay = '♥';
-                        }
-                        else {
-                            yayOrNay = '♡';
-                        }
-                        html += `<div class="container">
-                                    <h3.title>${filmData[i.Tittel]}</h3.title>
-                                    <p.sjanger>${filmData[i.Sjanger]}</p.sjanger>
-                                    <p.spilletid>${filmData[i.Spilletid]}</p.spilletid>
-                                    <div.favoritt>${yayOrNay}</div.favoritt></div>`
-                    }
-                
-                    mainC.innerHTML = html;
-                    console.log(html);
+        function showMovies() {
+
+            for (i = 0; i < filmData.length; i++) {
+                if (filmData[i].Favoritt == true) {
+                    yayOrNay = '♥';
                 }
-            });
+                else {
+                    yayOrNay = '♡';
+                }
+                html += `<div class="container">
+                                        <h3.title>${filmData[i.Tittel]}</h3.title>
+                                        <p.sjanger>${filmData[i.Sjanger]}</p.sjanger>
+                                        <p.spilletid>${filmData[i.Spilletid]}</p.spilletid>
+                                        <div.favoritt>${yayOrNay}</div.favoritt></div>`
+            }
+
+            mainC.innerHTML = html;
+            console.log(html);
+        }
+               
 
         showDiv();
-    </script>
+    </script>-->
     <script src="showAddMovie.js"></script>
     <script src="LeggInnFilm.js"></script>
     <script src="Load.js" charset="utf-8"></script>
-    <script src="sjangerListe.js" charset="utf-8"></script>
-    <!-- <script src="Meny.js" charset="utf-8"></script> -->
+    
 </body>
 </html>
 
