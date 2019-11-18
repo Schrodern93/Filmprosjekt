@@ -1,12 +1,15 @@
 // JavaScript source code
 let movies = [{
-    "genres" : "Action"
+    "genres": "Action",
+    "name": " ",
+    "play-time": " ",
+    "stard" : " "
 },
     {
      "genres" : "Fantasy"
     }, 
     {
-        "genres" : "Favoritter"
+        "genres" : "Stard"
     },
     {
         "genres" : "Romance"
