@@ -8,25 +8,27 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
     <script src="Firestore.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="StyleSheet1.css">
-    <script src="Meny.js" charset="utf-8"></script>
+    <script src="genres.js" charset="utf-8"></script>
+    <script src="undermeny.js" charset="utf-8"></script>
 
 </head>
 <body>
     <div id="side">
         <div id="header">Film Data</div>
         <div id="meny">
-            <h1>Meny Valg</h1>
-            <div id="optionhtml"></div>
+            <h4>Meny Valg</h4>
+            <div id="option"></div>
+            <!--<div w3-include-html="undermeny.html"></div>-->
             <!--<select id="sjangerValg" onchange="showDiv(this)">
-                <option selected value="Meny">Alle</option>
-                <option id="F" value="sjanger">Favoritter</option>
-                <option id="R" value="Sjanger1">Romantikk</option>
-                <option id="A" value="sjanger2">Action</option>
-                <option id="K" value="sjanger3">Komedie</option>
-                <option id="D" value="sjanger4">Drama</option>
-                <option id="FA" value="sjanger5">Fantasy</option>
-                <option id="DO" value="sjanger6">Dokkumentar</option>
-            </select>-->
+        <option selected value="Meny">Alle</option>
+        <option id="F" value="sjanger">Favoritter</option>
+        <option id="R" value="Sjanger1">Romantikk</option>
+        <option id="A" value="sjanger2">Action</option>
+        <option id="K" value="sjanger3">Komedie</option>
+        <option id="D" value="sjanger4">Drama</option>
+        <option id="FA" value="sjanger5">Fantasy</option>
+        <option id="DO" value="sjanger6">Dokkumentar</option>
+    </select>-->
             <button id="loadButton">load</button>
             <p id="addMovieText" onclick="addMovieBox(show)">Legg til film</p>
         </div>
@@ -56,7 +58,12 @@
         </div>
         <div id="footer">Copyright 2019, Film Data AS</div>
     </div>
-   
+   <script>
+       //meny();
+       //let text = meny();
+
+       document.getElementById('option').innerHTML = createSelect();
+   </script>
     <!--<script>
         
         function showMovies() {
