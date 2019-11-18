@@ -33,19 +33,24 @@ function LeggInn() {
 //});
 function showAddMovies() {
 	let html = `
-				<tr>
-					<th>Tittel</th>
-					<th>Spilletid</th>
-					<th>Sjanger</th>
-					<th>Favoritt</th>
-				</tr>
-				<tr>
-					<td><input id="inputTittel" type="text"/></td>
-					<td><input id="inputSpilletid" type="number" /></td>
-					<td><input id="inputSjanger" type="dropdown"/></td>
-					<td><input id="inputFavoritt" type="checkbox" /></td>
-					<td><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
-				</tr>`
+		<div id="addMovieBox">
+			<table>
+					<tr>
+						<th>Tittel</th>
+						<th>Spilletid</th>
+						<th>Sjanger</th>
+						<th>Favoritt</th>
+					</tr>
+					<tr>
+						<td><input id="inputTittel" type="text"/></td>
+						<td><input id="inputSpilletid" type="number" /></td>
+						<td><input id="inputSjanger" type="text"/></td>
+						<td><input id="inputFavoritt" type="checkbox" /></td>
+						<td><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
+					</tr>
+			</table>
+		</div>
+`
 	taskTable.innerHTML = html;
 }
 
@@ -61,8 +66,9 @@ function LeggInn() {
 		sjanger: inputSjanger.value,
 		favorit: inputFavorit.value,
 	});
-	inputTittle.value = '';
-	inputSpilletid.value = '';
-	inputSjanger.value = '';
-	inputFavorit.value = '';
+	//inputTittle.value = '';
+	//inputSpilletid.value = '';
+	//inputSjanger.value = '';
+	//inputFavorit.value = '';
+	removeMovieBox();
 }
