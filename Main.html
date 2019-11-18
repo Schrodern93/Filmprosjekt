@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Film Data</title>
+    <script src="Firestore.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="StyleSheet1.css">
     <script src="Meny.js" charset="utf-8"></script>
     
@@ -53,16 +54,16 @@
         </div>
         <div id="footer">Copyright 2019, Film Data AS</div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>-->
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <!--<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>-->
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>-->
 
-    <script>
+    <!--<script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyDJudofDYHe6jAavBq2Ei9O0lCMzNkVfZc",
@@ -94,9 +95,10 @@
                         html += '<li>' + FilmData.Tittel + ' (' + FilmData.Sjanger + ')' + '(' + FilmData.Spilletid + ' min )' + '(' + FilmData.Favoritt + ')</li>';
                         
                         console.log(FilmDataSnapshot.data);
-                        showMovies();
-                    });
-
+                     
+                    });-->
+   <!--showMovies();-->
+    <script>
                 // html += '</ul>';
                 // return html;
                 // document.getElementById('mainContent').innerHTML = html;
