@@ -18,9 +18,9 @@ body{
     height: 100vh;
     display: grid;
     grid-template-areas: "header header header"
-                         "meny mainContent mainContent"
-                         "footer footer footer";
-    grid-auto-rows: 3fr 1fr 1fr;
+    "meny mainContent mainContent"
+    "footer footer footer";
+    grid-auto-rows: 1fr 1fr .3fr;
     grid-template-columns: 1.9fr 12fr;
 }
 
@@ -28,11 +28,18 @@ body{
     grid-area: header;
     color: rgba(255, 255, 255, 0.781);
     font-family: Calibri;
-    font-size: 7vh;
+    font-size: 10vh;
     text-align: center;
     border-bottom: 2px solid black;
     text-shadow: 0vh 2vh 2vh rgba(0, 0, 0, 0.459), 0vh 2vh 4vh rgba(0, 0, 0, 0.746), 0vh 1.5vh .8vh rgb(0, 0, 0) ;
     box-shadow: 0px 2vh 3vh -1vh rgba(0, 0, 0, 0.575) inset, 0px -2vh 3vh -1vh rgba(0, 0, 0, 0.575) inset;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#logo {
+    transform: translateY(-0.5vh);
+    z-index: 0;
 }
 
 #meny{
@@ -45,7 +52,7 @@ body{
 }
 
 #addMovieText{
-    font-size: 14px;
+    font-size: 1.6vh;
     color: rgb(63, 63, 63);
     position: absolute;
     bottom: 0;
@@ -68,7 +75,7 @@ body{
     overflow-x: auto;
     position: relative;
     z-index: 1;
-    box-shadow: 0px 10vh 10vh -7vh rgba(0, 0, 0, 0.575) inset, 0px -10vh 10vh -7vh rgba(0, 0, 0, 0.575) inset;
+    box-shadow: 0px 10vh 5vh -5vh rgba(0, 0, 0, 0.575) inset, 0px -10vh 5vh -7vh rgba(0, 0, 0, 0.575) inset;
 }
 
 #overlayBox{
@@ -97,7 +104,7 @@ body{
 #addMovieBox{
     width: 85vh;
     height: 30vh;
-    background-color: rgba(255, 255, 255, 0.342);
+    background-color: rgba(255, 255, 255, 0.082);
     border: .4vh solid black;
     border-radius: 2vh;
     position: absolute;
@@ -106,9 +113,11 @@ body{
     margin-right: 31.75vh;
     margin-left:  31.75vh;
     user-select: none;
+    box-shadow: 0vh 7.5vh 20vh black, 0vh 1vh 2vh rgba(255, 255, 255, 0.109) inset, 0vh -1vh 2vh rgba(0, 0, 0, 0.76) inset;
 }
 
 .addMovieHeader{
+    color: rgb(240, 240, 240);
     font-family: Verdana;
     font-size: 4vh;
     text-align: center;
@@ -135,7 +144,8 @@ hr.addMovieHr{
     margin-top: 5vh;
     margin-right: auto;
     margin-left: auto;
-    font-size: 2.2vh
+    font-size: 2.2vh;
+    color: rgb(230, 230, 230);
 }
 
 #inputFavoritt{
