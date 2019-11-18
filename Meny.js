@@ -6,11 +6,8 @@ let info = 'tekst bare';
 
 
 function showDiv(element) {
-    if
-        (element.value == "sjanger") {
-        document.getElementById("mainContent").innerHTML = Favoritter[F];
-        //
-        
+    if(element.value == "sjanger") {
+        document.getElementById("mainContent").innerHTML = Favoritter[F]
     }
     if (element.value == "sjanger1") {
         document.getElementById("mainContent").innerHTML = Romantikk[R];
