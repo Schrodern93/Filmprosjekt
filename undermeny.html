@@ -4,25 +4,52 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-
+    <script src="genres.js" charset="utf-8"></script>
 </head>
 <body>
+    <div id="liste"></div>
+    <script>
+        let currentMovies = [];
+        let selectedGenre;
+        let genres = extractGenres();
 
-   <h1>Meny Valg</h1>
-    <select id="sjangerValg" onchange="showDiv(this)">
-        <option selected value="Meny">Alle</option>
-        <option id="F" value="sjanger">Favoritter</option>
-        <option id="R" value="Sjanger1">Romantikk</option>
-        <option id="A" value="sjanger2">Action</option>
-        <option id="K" value="sjanger3">Komedie</option>
-        <option id="D" value="sjanger4">Drama</option>
-        <option id="FA" value="sjanger5">Fantasy</option>
-        <option id="DO" value="sjanger6">Dokummentar</option>
-    </select>
+        show();
+        function show() {
+            let optionsHtml = '';
+            for (let genre of genres) {
+                let selected = selectedGenre == genre ? 'selected' : '';
+                optionsHtml += `<option ${selected}>${genre}</option>`;
+            }
+            document.getElementById("liste").innerHTML = `
+                <select onchange="selectGenre(this.value)">
+                    ${optionsHtml}
+                </select>`
+        }
+        //<select id="sjangerValg" onchange="showDiv(this)"
+        function selectGenre(genre) {
+            selectedGenre = genre;
+            currentMovies = [];
+            for (let movie of movies) {
+                if (movie.genres.includes(genre)) {
+                    currentMovies.push(movie);
+                }
+            }
+            show();
+        }
+        function extractGenres() {
+            let genres = [];
+            for (let movie of movies) {
+                let genresOfOneMovie = movie.genres.split('|');
+                for (let genre of genresOfOneMovie) {
+                    if (!genres.includes(genre)) {
+                        genres.push(genre);
+                    }
+                }
+            }
+            return genres;
+        }
 
-    
+    </script>
 
-
-    <script src="Meny.js" charset="utf-8"></script>
 </body>
 </html>
