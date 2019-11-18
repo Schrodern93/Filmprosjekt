@@ -36,19 +36,49 @@
     text-align: center;
 }
 
+#addMovieText{
+    font-size: 14px;
+    color: rgb(37, 37, 37);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 3%;
+    margin-left: 3.5%;
+}
+
+#addMovieText:hover{
+    color: rgb(87, 87, 87);
+}
+
 #mainContent{
+    border: 2px solid rgb(0, 0, 0);
+    overflow-y: hidden;
+    height: 6fr;
+}
+
+div.mCContainer{
     padding-top: 30px;
     grid-area: mainContent;
     display: grid;
-    border: 2px solid rgb(0, 0, 0);
     justify-items: center;
     align-content: space-between;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-row-gap: 20px;
-    overflow-y: hidden;
-    height: 6fr;
+    row-gap: 20px;
+    margin-left: 5%;
+    position: absolute;
+    z-index: 0;
+}
 
+#addMovieBox{
+    width: 70%;
+    height: 50%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 4%;
+    margin-left: 5%;
 }
 
 div.container{
