@@ -63,6 +63,6 @@ function LeggInn() {
 	});
 	inputTittle.value = '';
 	inputSpilletid.value = '';
-	inputSjanger = '';
-	inputFavorit = '';
+	inputSjanger.value = '';
+	inputFavorit.value = '';
 }
