@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+    <div id="content"></div>
+    <script src="Firestore.js"></script>
+    <script>
+        // model
+        let currentMovies = [];
+        let selectedGenre;
+        //let data = [];
+        //let movies = FilmData;
+        let genres = extractGenres();
+
+        // view
+        show();
+        function show() {
+            let optionsHtml = '';
+            for (let genre of Sjanger) {
+                let selected = selectedGenre == genre ? 'selected' : '';
+                optionsHtml += `<option ${selected}>${genre}</option>`;
+            }
+
+            let moviesHtml = '';
+            for (let FilmData of currentMovies) {
+                moviesHtml += `<tr>
+                                            <td>${FilmData.Tittel}</td>
+                                            <td>${FilmData.Sjanger}</td>
+                                            <td>${FilmData.Spilletid}</td>
+                                            <td>${FilmData.Favoritt}</td>
+                                </tr>`;
+            }
+            document.getElementById('content').innerHTML = `
+                        <select onchange="selectGenre(this.value)">
+                            ${optionsHtml}
+                        </select>
+
+                        <table>
+                            ${moviesHtml}
+                        </table>
+                    `;
+        }
+        // controller
+        function selectGenre(genre) {
+            selectedGenre = genre;
+            currentMovies = [];
+            for (let movie of movies) {
+                if (movie.genres.includes(genre)) {
+                    currentMovies.push(movie);
+                }
+            }
+            show();
+        }
+        console.log(genres);
+        //function extractGenres() {
+        //    let genres = new Set();
+        //    for (let movie of movies) {
+        //        let genresOfOneMovie = movie.genres.split('|');
+        //        for (let genre of genresOfOneMovie) {
+        //            genres.add(genre);
+        //        }
+        //    }
+        //    return genres;
+        //}
+
+        function extractGenres() {
+            let genres = [];
+            for (let FilmData of movies) {
+                let genresOfOneMovie = FilmData.Sjanger
+                for (let FilmData of genresOfOneMovie) {
+                    if (!genres.includes(FilmData)) {
+                        genres.push(FilmData);
+                    }
+                }
+            }
+            return genres;
+        }
+
+                                            //for (let i = 0; i < movies.length; i++) {
+                                            //    let movie = movies[i];
+                                            //    // ...
+                                            //}
+
+    </script>
+</body>
+</html>
