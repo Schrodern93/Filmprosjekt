@@ -1,5 +1,8 @@
 // JavaScript source code
 let movies = [{
+    "genres" : "All"
+      },
+    {
     "genres": "Action",
     "name": " ",
     "play-time": " ",
