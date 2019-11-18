@@ -1,7 +1,7 @@
+let movieContainers = document.getElementById('gridContainer');
 
 function addMovieBox(){
     let mContent = document.getElementById('mainContent');
-
 
     let html = `
         <div id="addMovieBox">
@@ -10,14 +10,17 @@ function addMovieBox(){
         </div>`;
     
     mContent.innerHTML += html;
+    blurOrUnblur('gridContainer');
 }
 
 function removeMovieBox(){
     let movieBox = document.getElementById('addMovieBox');
     movieBox.remove();
+    blurOrUnblur('gridContainer')
 }
 
-function blur(elementID){
-    selectedClass = document.getElementById(elementID);
-    selectedClass.classList.add(blur);
+function blurOrUnblur(elementId){
+    let selectedId = document.getElementById(elementId);
+    selectedId.classList.toggle('blur');
+
 }
