@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="content"></div>
+    <script src="movies.json"></script>
+    <script>
+        // model
+        let currentMovies = [];
+        let selectedGenre;
+        let genres = extractGenres();
+
+        // view
+        show();
+        function show() {
+            document.getElementById('content').innerHTML = `
+                <select onchange="selectGenre(this.value)">
+                    ${genres.map(genre =>
+                        `<option ${selectedGenre == genre ? 'selected' : ''}>
+                            ${genre}
+                         </option>`
+                    ).join('')}
+                </select>
+
+                <table>
+                    ${currentMovies.map(movie =>                        
+                        `<tr>
+                                    <td>${movie.movie_title}</td>
+                                    <td>${movie.genres}</td>
+                                    <td>${movie.director_name}</td>
+                                    <td>${movie.title_year}</td>
+                        </tr>`
+                        ).join('')}
+                </table>
+            `;
+        }
+
+        // controller
+        function selectGenre(genre) {
+            selectedGenre = genre;
+            currentMovies = [];
+            for (let movie of movies) {
+                if (movie.genres.includes(genre)) {
+                    currentMovies.push(movie);                    
+                }
+            }
+            show();
+        }
+
+        //function extractGenres() {
+        //    let genres = new Set();
+        //    for (let movie of movies) {
+        //        let genresOfOneMovie = movie.genres.split('|');
+        //        for (let genre of genresOfOneMovie) {
+        //            genres.add(genre);
+        //        }
+        //    }
+        //    return genres;
+        //}
+
+        function extractGenres() {
+            let genres = [];
+            for (let movie of movies) {
+                let genresOfOneMovie = movie.genres.split('|');
+                for (let genre of genresOfOneMovie) {
+                    if (!genres.includes(genre)) {
+                        genres.push(genre);
+                    }
+                }
+            }
+            return genres;
+        }
+
+                                    //for (let i = 0; i < movies.length; i++) {
+                                    //    let movie = movies[i];
+                                    //    // ...
+                                    //}
+
+    </script>
+</body>
+</html>

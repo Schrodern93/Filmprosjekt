@@ -17,6 +17,20 @@ function showAddMovies() {
 	taskTable.innerHTML = html;
 }
 
-function createHtmlRow() {
+let inputTittle = document.getElementById('inputTittel');
+let inputSpilletid = document.getElementById('inputSpilletid');
+let inputSjanger = document.getElementById('inputSjanger');
+let inputFavorit = document.getElementById('inputFavorit');
 
+function LeggInn() {
+	filmData.push({
+		filmTittel: inputTittle.value,
+		spilletid: inputSpilletid.value,
+		sjanger: inputSjanger.value,
+		favorit: inputFavorit.value,
+	});
+	inputTittle.value = '';
+	inputSpilletid.value = '';
+	inputSjanger = '';
+	inputFavorit = '';
 }

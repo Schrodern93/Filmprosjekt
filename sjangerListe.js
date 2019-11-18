@@ -24,11 +24,11 @@ function show() {
     let moviesHtml = '';
     for (let movie of currentMovies) {
         moviesHtml += `<tr>
-                                    <td>${movie.movie_title}</td>
-                                    <td>${movie.genres}</td>
-                                    <td>${movie.director_name}</td>
-                                    <td>${movie.title_year}</td>
-                        </tr>`;
+                          <td>${movie.movie_title}</td>
+                          <td>${movie.genres}</td>
+                          <td>${movie.director_name}</td>
+                          <td>${movie.title_year}</td>
+                       </tr>`;
     }
 
     document.getElementById('content').innerHTML = `
@@ -67,18 +67,18 @@ function selectGenre(genre) {
 //    return genres;
 //}
 
-//function extractGenres() {
-//    let genres = [];
-//    for (let movie of movies) {
-//        let genresOfOneMovie = movie.genres.split('|');
-//        for (let genre of genresOfOneMovie) {
-//            if (!genres.includes(genre)) {
-//                genres.push(genre);
-//            }
-//        }
-//    }
-//    return genres;
-//}
+function extractGenres() {
+    let genres = [];
+    for (let movie of movies) {
+        let genresOfOneMovie = movie.genres.split('|');
+        for (let genre of genresOfOneMovie) {
+            if (!genres.includes(genre)) {
+                genres.push(genre);
+            }
+        }
+    }
+    return genres;
+}
 
                                     //for (let i = 0; i < movies.length; i++) {
                                     //    let movie = movies[i];
