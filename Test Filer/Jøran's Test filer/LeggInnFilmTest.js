@@ -23,6 +23,7 @@ let inputSjanger = document.getElementById('inputSjanger');
 let inputFavorit = document.getElementById('inputFavorit');
 
 function LeggInn() {
+
 	filmData.push({
 		filmTittel: inputTittle.value,
 		spilletid: inputSpilletid.value,

@@ -6,42 +6,45 @@ function showAddMovies() {
 		<hr class="addMovieHr"/>
 			<table class="addMovieTable">
 				<tr>
-				<th>Tittel</th>
-				<th>Spilletid</th>
+				    <th>Tittel</th>
+				    <th>Spilletid</th>
 					<th>Sjanger</th>
 					<th>Favoritt</th>
-					</tr>
+				</tr>
 				<tr>
-				<td><input id="inputTittel" type="text"/></td>
-				<td><input id="inputSpilletid" type="number" /></td>
+				    <td><input id="inputTittel" type="text"/></td>
+				    <td><input id="inputSpilletid" type="number" /></td>
 					<td><input id="inputSjanger" type="text"/></td>
 					<td><input id="inputFavoritt" type="checkbox" /></td>
 					<td><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
-					</tr>
+				</tr>
 			</table><p id="addMovieClose" onclick="removeMovieBox()">X</p>
 						
 						`;
 	movieBox.innerHTML = html;
 }
 
-let inputTittel = document.getElementById('inputTittel');
-let inputSpilletid = document.getElementById('inputSpilletid');
-let inputSjanger = document.getElementById('inputSjanger');
-let inputFavoritt = document.getElementById('inputFavoritt');
+let inputTittel = document.getElementById('inputTittel').value;
+let inputSpilletid = document.getElementById('inputSpilletid').value;
+let inputSjanger = document.getElementById('inputSjanger').value;
+let inputFavoritt = document.getElementById('inputFavoritt').checked;
 
 let db = firebase.firestore(); // mulig const eller var
 var userCollection = db.collection('FilmData');
 console.log(inputTittel);
 
 function LeggInn() {
-    let info = {
-		Tittel: inputTittel.value,
-		Spilletid: parseInt(inputSpilletid.value),
-		Sjanger: inputSjanger.value,
-		Favoritt: inputFavoritt.checked
+	console.log('test1', )
+	let info = {
+		Tittel: inputTittel,
+		Spilletid: parseInt(inputSpilletid),
+		Sjanger: inputSjanger,
+		Favoritt: inputFavoritt
+		
 	};
-    userCollection.add(info);
-    removeMovieBox();
+	console.log('test2', inputTittle.value, inputSpilletid.value, inputSjanger.value, inputFavoritt.checked)
+	userCollection.add(info);
+	removeMovieBox();
 }
 	//inputTittle.value = '';
 	//inputSpilletid.value = '';
