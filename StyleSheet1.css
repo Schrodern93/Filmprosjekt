@@ -58,6 +58,8 @@ body{
     height: 88.5vh;
 }
 
+
+
 #addMovieText{
     font-size: 1.6vh;
     color: rgb(63, 63, 63);
@@ -152,11 +154,36 @@ hr.addMovieHr{
     margin-right: auto;
     margin-left: auto;
     font-size: 2.2vh;
-    color: rgb(230, 230, 230);
+    color: rgb(153, 153, 153);
+}
+
+.addMovieTD{
+    width: 0vw;
+    margin-right: 1vw;
+    /* margin-left: 1vw; */
+}
+
+.addMovieTH{
+    width: 0vw;
+}
+
+#inputTittel, #inputSpilletid, #inputSjanger, #inputFavoritt, 
+#addMovieButton, #loadButton, #sjanger{
+    width: 8vw;
+    /* margin-right: 1vw; */
+    background-color: rgb(49, 49, 49);
+    border: 0.2vh solid black;
+    color: rgb(153, 153, 153);
+}
+
+#loadButton{
+    width: 3vw;
 }
 
 #inputFavoritt{
-    margin-left: 3.2vh;
+    /* margin-left:1vw; */
+    margin-right: 0vw;
+    width: 3vw;
 }
 
 #addMovieClose{
