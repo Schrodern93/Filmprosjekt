@@ -9,22 +9,22 @@ function showAddMovies() {
 		<hr class="addMovieHr"/>
 			<table class="addMovieTable">
 				<tr>
-				<th class="addMovieTH">Tittel</th>
-				<th class="addMovieTH">Spilletid</th>
-				<th class="addMovieTH">Sjanger</th>
-				<th class="addMovieTH">Favoritt</th>
-				</tr>
+				<th>Tittel</th>
+				<th>Spilletid</th>
+					<th>Sjanger</th>
+					<th>Favoritt</th>
+					</tr>
 				<tr>
-				<td class="addMovieTD"><input id="inputTittel" type="text"/></td>
-				<td class="addMovieTD"><input id="inputSpilletid" type="number" /></td>
-					<td class="addMovieTD"><input id="inputSjanger" type="text"/></td>
-					<td class="addMovieTD"><input id="inputFavoritt" type="checkbox" /></td>
-					<td class="addMovieTD"><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
+				<td><input id="inputTittel" type="text"/></td>
+				<td><input id="inputSpilletid" type="number" /></td>
+					<td><input id="inputSjanger" type="text"/></td>
+					<td><input id="inputFavoritt" type="checkbox" /></td>
+					<td><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
 					</tr>
 			</table><p id="addMovieClose" onclick="removeMovieBox()">X</p>
 						
 						`;
-	movieBox.innerHTML = html;
+    movieBox.innerHTML = html;
 }
 
 console.log(document.getElementById('inputTittel'));
@@ -35,17 +35,14 @@ console.log(document.getElementById('inputTittel'));
 
 
 function LeggInn() {
-	
-	let info = {
-		Tittel: inputTittel,
-		Spilletid: parseInt(inputSpilletid),
-		Sjanger: inputSjanger,
-		Favoritt: inputFavoritt
-		
+    let info = {
+		Tittel: inputTittel.value,
+		Spilletid: parseInt(inputSpilletid.value),
+		Sjanger: inputSjanger.value,
+		Favoritt: inputFavoritt.checked
 	};
-	
-	userCollection.add(info);
-	removeMovieBox();
+    userCollection.add(info);
+    removeMovieBox();
 }
 	//inputTittle.value = '';
 	//inputSpilletid.value = '';
@@ -64,12 +61,12 @@ function addMovieBox() {
 	}
 	else {
 		mContent.innerHTML += boxHTML;
-		showAddMovies();
-		let inputTittel = document.getElementById('inputTittel');
-		let inputSpilletid = document.getElementById('inputSpilletid');
-		let inputSjanger = document.getElementById('inputSjanger');
-		let inputFavoritt = document.getElementById('inputFavoritt');
-		
+        showAddMovies();
+        let inputTittel = document.getElementById('inputTittel');
+let inputSpilletid = document.getElementById('inputSpilletid');
+let inputSjanger = document.getElementById('inputSjanger');
+let inputFavoritt = document.getElementById('inputFavoritt');
+        console.log(document.getElementById('inputTittel'));
 	}
 	blurUnblur('gridContainer')
 }
