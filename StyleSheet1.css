@@ -2,14 +2,18 @@
     scroll-behavior: smooth;
 }
 
+*{
+        user-select: none;
+}
 body{
+    background-image: linear-gradient(#18909b, #53004f, #470043, rgb(31, 31, 31));
     padding: 0px;
     margin: 0px;
     overflow: hidden;
 }
 
 #side{
-    background-image: linear-gradient(#0b8793, #360033, #360033, black);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.178), rgba(255, 255, 255, 0.055), rgba(0, 0, 0, 0));
     /* background-image: linear-gradient(white, #c33764, #1d2671); */
     /* background-image: linear-gradient(rgb(255, 255, 255), rgb(75, 75, 75), black); */
     background-repeat: no-repeat;
@@ -17,44 +21,58 @@ body{
     height: 100vh;
     display: grid;
     grid-template-areas: "header header header"
-                         "meny mainContent mainContent"
-                         "footer footer footer";
-    grid-auto-rows: 3fr 17fr 1fr;
-    grid-template-columns: 2fr 12fr;
+    "meny mainContent mainContent"
+    "footer footer footer";
+    grid-auto-rows: 1fr 1fr .3fr;
+    grid-template-columns: 1.9fr 12fr;
 }
 
 #header{
     grid-area: header;
-    color: black;
+    color: rgba(255, 255, 255, 0.781);
     font-family: Calibri;
-    font-size: 65px;
+    font-size: 10vh;
     text-align: center;
-    height: 2fr;
     border-bottom: 2px solid black;
-    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.459), 0px 10px 15px rgba(0, 0, 0, 0.746), 0px 7.5px 10px rgb(0, 0, 0) ;
+    text-shadow: 0vh 2vh 2vh rgba(0, 0, 0, 0.459), 0vh 2vh 4vh rgba(0, 0, 0, 0.746), 0vh 1.5vh .8vh rgb(0, 0, 0) ;
+    box-shadow: 0px 2vh 3vh -1vh rgba(0, 0, 0, 0.575) inset, 0px -2vh 3vh -1vh rgba(0, 0, 0, 0.575) inset;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#logo {
+    transform: translateY(-0.6vw);
+    z-index: 0;
+    width: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 #meny{
     grid-area: meny;
     border-right: 2px solid rgb(0, 0, 0);
     font-family: Verdana;
-    font-size: 20px;
+    font-size: 2.5vh;
     text-align: center;
-    height: 101%;
+    height: 88.5vh;
 }
 
+
+
 #addMovieText{
-    font-size: 14px;
-    color: rgb(37, 37, 37);
+    font-size: 1.6vh;
+    color: rgb(63, 63, 63);
     position: absolute;
     bottom: 0;
     margin-bottom: 3%;
     margin-left: 3.5%;
     user-select: none;
+    cursor: pointer;
 }
 
 #addMovieText:hover{
-    color: rgb(87, 87, 87);
+    color: rgb(153, 39, 128);
 }
 
 #mainContent{
@@ -66,84 +84,114 @@ body{
     overflow-x: auto;
     position: relative;
     z-index: 1;
+    box-shadow: 0px 10vh 5vh -5vh rgba(0, 0, 0, 0.575) inset, 0px -10vh 5vh -7vh rgba(0, 0, 0, 0.575) inset;
 }
 
 #overlayBox{
-    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.575) inset;
     margin: 0px;
     padding: 0px;
     position:absolute;
     width: 100%;
     height: 100%;
-    margin-bottom: 10%;
 }
 
 #gridContainer{
     position: relative;
-    padding-top: 30px;
+    padding-top: 3vh;
     display: grid;
     justify-items: center;
     align-content: space-between;
-    grid-template-rows: repeat(auto-fit, 100px);
-    grid-template-columns: repeat(5, 1fr);
-    row-gap: 2%;
-    margin-left: 1%;
+    grid-template-rows: repeat(auto-fit, 14vh);
+    grid-template-columns: repeat(5, 17vw);
+    row-gap: 2vw;
+    margin-left: 1vw;
     z-index: 0;
     overflow-y: visible;
     margin-bottom: calc(100vh - 37.5%);
 }
 
 #addMovieBox{
-    width: 65%;
-    height: 50%;
-    background-color: rgba(255, 255, 255, 0.342);
-    border: 2px solid black;
-    border-radius: 20px;
+    width: 55vw;
+    height: 34vh;
+    background-color: rgba(255, 255, 255, 0.082);
+    border: .4vh solid black;
+    border-radius: 2vh;
     position: absolute;
     z-index: 1;
-    margin-top: 5%;
-    margin-right: 9.5%;
-    margin-left:  9.5%;
+    margin-top: 10%;
+    margin-right: 8.85vw;
+    margin-left:  8.85vw;
+    user-select: none;
+    box-shadow: 0vh 7.5vh 20vh black, 0vh 1vh 2vh rgba(255, 255, 255, 0.109) inset, 0vh -1vh 2vh rgba(0, 0, 0, 0.76) inset;
 }
 
 .addMovieHeader{
+    color: rgb(240, 240, 240);
     font-family: Verdana;
-    font-size:35px;
+    font-size: 4vh;
     text-align: center;
     padding: 0px;
     margin: 0px;
-    margin-top:20px;
-    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.575);
+    margin-top: 2vh;
+    text-shadow: 0px .5vh .7vh rgba(0, 0, 0, 0.726);
 }
 
 hr.addMovieHr{
     border: 0px;
     margin:0px;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
     margin-right: auto;
     margin-left: auto;
     background-color: black;
-    width: 50%;
-    height:3px;
+    width: 45vh;
+    height: 0.3vh;
     border-radius: 50%;
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.575);
+    box-shadow: 0px .5vh 1vh .5vh rgba(0, 0, 0, 0.356);
 }
 
 .addMovieTable{
-    margin-top: 50px;
+    margin-top: 5vh;
     margin-right: auto;
     margin-left: auto;
+    font-size: 2.2vh;
+    color: rgb(153, 153, 153);
+}
+
+.addMovieTD{
+    width: 0vw;
+    margin-right: 1vw;
+    /* margin-left: 1vw; */
+}
+
+.addMovieTH{
+    width: 0vw;
+}
+
+#inputTittel, #inputSpilletid, #inputSjanger, #inputFavoritt, 
+#addMovieButton, #loadButton, #sjanger{
+    width: 8vw;
+    /* margin-right: 1vw; */
+    background-color: rgb(49, 49, 49);
+    border: 0.2vh solid black;
+    color: rgb(153, 153, 153);
+    border-radius: 0.3vw;
+}
+
+#loadButton{
+    width: 3vw;
 }
 
 #inputFavoritt{
-    margin-left: 22px;
+    /* margin-left:1vw; */
+    margin-right: 0vw;
+    width: 3vw;
 }
 
 #addMovieClose{
     position: absolute;
-    right: 10px;
-    top: -20px;
-    font-size: 25px;
+    right: 1vh;
+    top: -2.2vh;
+    font-size: 2.8vh;
 }
 
 #addMovieClose:hover{
@@ -152,45 +200,56 @@ hr.addMovieHr{
 }
 
 div.container{
-    margin-right: 1vw;
     display: grid;        
+    margin-right: 1vw;
     align-items: center;  
     justify-items: center;
-    width: 200px;
-    height: 100px;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 10px;
+    width: 15vw;
+    height: 12vh;
+    border: 0.3vh solid rgb(0, 0, 0);
+    border-radius: 1.5vh;
     color:rgb(90, 90, 90);
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0vh 1.4vh 10px -0.8vh rgb(0, 0, 0);
+    -webkit-transition: width 0.2s, height 0.4s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.2s, height 0.4s, margin-bottom 0.4s;
+    margin-bottom: 1vh;
 }
 
 div.container:hover{
-    border-width: 2px;
+    width: 17vw;
+    height:13vh;
+    margin-bottom: 0vh;
+    border-width: 0.3vh;
     border-style: solid;
-    border: 2px solid #740047;
-    color:rgb(187, 187, 187);
+    border: 0.3vh solid #ac0c91a9;
+    color:rgb(192, 192, 192);
+    box-shadow: 0vh 1.4vh 1vh -0.8vh rgba(0, 0, 0, 0.671);
     
 }
 
 #footer{
     grid-area: footer;
-    border-top: 2px solid black;
+    border-top: 0.2vh solid black;
     color: rgb(51, 51, 51);
     text-align: center;
-    margin-top: 5px;
     padding: 0px;
-    height: 1fr;
+    padding-top: .2vh;
+    user-select: none;
     z-index: 1;
+    
 }
 #footer:hover{
-    color: white;
+    color: rgb(114, 114, 114);
 }
 
 
 /* Fancy shite */
 
 .blur{
-    filter: blur(0.4vw);
-    -webkit-filter: blur(0.4vw);
+    filter: blur(1.2vh);
+    -webkit-filter: blur(1.2vh);
     user-select: none;
 }
 
@@ -198,27 +257,29 @@ div.container:hover{
 
     /* width */
     ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 1.3vh;
+    height: 1.3vh;
     }
     
     /* Track */
     ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 10px  #00000000; 
-    border-radius: 10px;
+    box-shadow: inset 0 0 1vh  #00000000; 
+    border-radius: 100vh;
     }
     ::-webkit-scrollbar-track:hover {
-    box-shadow: inset 0 0 10px  #ffffff1a; 
-    border-radius: 10px;
+    box-shadow: inset 0 0 20vh  #ffffff0e; 
+    /* border-radius: 20vh; */
     }
     
     /* Handle */
     ::-webkit-scrollbar-thumb {
-    background: rgb(0, 0, 0);
-    border-radius: 10px;
+    /* background: rgb(0, 0, 0); */
+    background: #00000038;
+    border-radius: 100vh;
     }
     
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-    background: #6e0069d8;
+    /* background:  */
+    background: #d100ec63;
     }
