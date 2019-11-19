@@ -14,7 +14,7 @@
         }
         //document.getElementById("text").innerHTML = `
         return `
-                <select onchange="selectGenre(this.value)">
+                <select id="sjanger" onchange="selectGenre(this.value)">
                     ${optionsHtml}
                 </select> `
     }
