@@ -93,8 +93,8 @@ body{
     display: grid;
     justify-items: center;
     align-content: space-between;
-    grid-template-rows: repeat(auto-fit, 12vh);
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fit, 14vh);
+    grid-template-columns: repeat(5, 17vw);
     row-gap: 2vw;
     margin-left: 1vw;
     z-index: 0;
@@ -178,9 +178,15 @@ div.container{
     cursor: pointer;
     user-select: none;
     box-shadow: 0vh 1.4vh 10px -0.8vh rgb(0, 0, 0);
+    -webkit-transition: width 0.2s, height 0.4s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.2s, height 0.4s, margin-bottom 0.4s;
+    margin-bottom: 1vh;
 }
 
 div.container:hover{
+    width: 17vw;
+    height:13vh;
+    margin-bottom: 0vh;
     border-width: 0.3vh;
     border-style: solid;
     border: 0.3vh solid #ac0c91a9;
