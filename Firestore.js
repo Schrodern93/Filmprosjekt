@@ -27,7 +27,7 @@ function firestore() {
 
                     let FilmData = FilmDataSnapshot.data();
                     html += '<li>' + FilmData.Tittel + ' (' + FilmData.Sjanger + ')' + '(' + FilmData.Spilletid + ' min )' + '(' + FilmData.Favoritt + ')</li>';
-                    console.log(FilmDataSnapshot.data);  
+                   
                 }); 
         });
 }
