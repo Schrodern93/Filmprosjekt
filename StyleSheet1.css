@@ -38,8 +38,9 @@ body{
 }
 
 #logo {
-    transform: translateY(-0.5vh);
+    transform: translateY(-0.6vw);
     z-index: 0;
+    width: 10vw;
 }
 
 #meny{
