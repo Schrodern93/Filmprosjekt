@@ -27,12 +27,6 @@ function showAddMovies() {
     movieBox.innerHTML = html;
 }
 
-console.log(document.getElementById('inputTittel'));
-
-
-
-
-
 
 function LeggInn() {
     let info = {
@@ -63,10 +57,9 @@ function addMovieBox() {
 		mContent.innerHTML += boxHTML;
         showAddMovies();
         let inputTittel = document.getElementById('inputTittel');
-		let inputSpilletid = document.getElementById('inputSpilletid');
-		let inputSjanger = document.getElementById('inputSjanger');
-		let inputFavoritt = document.getElementById('inputFavoritt');
-        console.log(document.getElementById('inputTittel'));
+        let inputSpilletid = document.getElementById('inputSpilletid');
+        let inputSjanger = document.getElementById('inputSjanger');
+        let inputFavoritt = document.getElementById('inputFavoritt');  
 	}
 	blurUnblur('gridContainer')
 }

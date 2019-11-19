@@ -22,18 +22,8 @@
         <div id="meny">
             <h4>Meny Valg</h4>
             <div id="option"></div>
-            <!--<div w3-include-html="undermeny.html"></div>-->
-            <!--<select id="sjangerValg" onchange="showDiv(this)">
-        <option selected value="Meny">Alle</option>
-        <option id="F" value="sjanger">Favoritter</option>
-        <option id="R" value="Sjanger1">Romantikk</option>
-        <option id="A" value="sjanger2">Action</option>
-        <option id="K" value="sjanger3">Komedie</option>
-        <option id="D" value="sjanger4">Drama</option>
-        <option id="FA" value="sjanger5">Fantasy</option>
-        <option id="DO" value="sjanger6">Dokkumentar</option>
-    </select>-->
-            <button id="loadButton">load</button>
+       
+            <button id="loadButton" onclick="load()">load</button>
             <p id="addMovieText" onclick="addMovieBox()">Legg til film</p>
         </div>
         <div id="mainContent">
@@ -74,6 +64,7 @@
        //let text = meny();
 
        document.getElementById('option').innerHTML = createSelect();
+       //document.getElementById('mainContent').innerHTML = load();
    </script>
     <!--<script>
         

@@ -3,6 +3,9 @@ let movies = [{
     "genres" : "All"
       },
     {
+        "genres" : "Stard"
+    },
+    {
     "genres": "Action",
     "name": " ",
     "play-time": " ",
@@ -11,9 +14,6 @@ let movies = [{
     {
      "genres" : "Fantasy"
     }, 
-    {
-        "genres" : "Stard"
-    },
     {
         "genres" : "Romance"
     },
