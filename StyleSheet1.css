@@ -245,15 +245,35 @@ div.container:hover{
 }
 
 
-/* Fancy shite */
+/* ----- Fancy shite ----- */
 
+
+    /* --- Blur --- */
 .blur{
-    filter: blur(1.2vh);
-    -webkit-filter: blur(1.2vh);
+    /* filter: blur(1.2vh); */
+    /* -webkit-filter: blur(1.2vh);  */
     user-select: none;
+    -webkit-animation-name: blur; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: .4s; /* Safari 4.0 - 8.0 */
+    animation-name: blur;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
 }
 
-/* --- Custom Scrollbar --- */
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes blur {
+    from {filter: blur(0vh);}
+    to {filter: blur(1.8vh);}
+  }
+  
+  /* Standard syntax */
+  @keyframes blur {
+    from {filter: blur(0vh);}
+    to {filter: blur(1.8vh);}
+  }
+
+    /* --- Custom Scrollbar --- */
 
     /* width */
     ::-webkit-scrollbar {

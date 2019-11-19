@@ -63,9 +63,9 @@ function addMovieBox() {
 		mContent.innerHTML += boxHTML;
         showAddMovies();
         let inputTittel = document.getElementById('inputTittel');
-let inputSpilletid = document.getElementById('inputSpilletid');
-let inputSjanger = document.getElementById('inputSjanger');
-let inputFavoritt = document.getElementById('inputFavoritt');
+		let inputSpilletid = document.getElementById('inputSpilletid');
+		let inputSjanger = document.getElementById('inputSjanger');
+		let inputFavoritt = document.getElementById('inputFavoritt');
         console.log(document.getElementById('inputTittel'));
 	}
 	blurUnblur('gridContainer')
