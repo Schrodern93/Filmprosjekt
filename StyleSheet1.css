@@ -2,6 +2,9 @@
     scroll-behavior: smooth;
 }
 
+*{
+        user-select: none;
+}
 body{
     background-image: linear-gradient(#18909b, #53004f, #470043, rgb(31, 31, 31));
     padding: 0px;
@@ -41,6 +44,9 @@ body{
     transform: translateY(-0.6vw);
     z-index: 0;
     width: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 #meny{
@@ -103,16 +109,16 @@ body{
 }
 
 #addMovieBox{
-    width: 85vh;
-    height: 30vh;
+    width: 55vw;
+    height: 34vh;
     background-color: rgba(255, 255, 255, 0.082);
     border: .4vh solid black;
     border-radius: 2vh;
     position: absolute;
     z-index: 1;
     margin-top: 10%;
-    margin-right: 31.75vh;
-    margin-left:  31.75vh;
+    margin-right: 8.85vw;
+    margin-left:  8.85vw;
     user-select: none;
     box-shadow: 0vh 7.5vh 20vh black, 0vh 1vh 2vh rgba(255, 255, 255, 0.109) inset, 0vh -1vh 2vh rgba(0, 0, 0, 0.76) inset;
 }
@@ -247,5 +253,5 @@ div.container:hover{
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
     /* background:  */
-    background: #a300b944;
+    background: #d100ec63;
     }
