@@ -24,7 +24,7 @@ function showAddMovies() {
 			</table><p id="addMovieClose" onclick="removeMovieBox()">X</p>
 						
 						`;
-    movieBox.innerHTML = html;
+	movieBox.innerHTML = html;
 }
 
 console.log(document.getElementById('inputTittel'));
@@ -35,7 +35,7 @@ console.log(document.getElementById('inputTittel'));
 
 
 function LeggInn() {
-	console.log('test1', )
+	
 	let info = {
 		Tittel: inputTittel,
 		Spilletid: parseInt(inputSpilletid),
@@ -43,7 +43,7 @@ function LeggInn() {
 		Favoritt: inputFavoritt
 		
 	};
-	console.log('test2', inputTittle.value, inputSpilletid.value, inputSjanger.value, inputFavoritt.checked)
+	
 	userCollection.add(info);
 	removeMovieBox();
 }
@@ -64,12 +64,12 @@ function addMovieBox() {
 	}
 	else {
 		mContent.innerHTML += boxHTML;
-        showAddMovies();
-        let inputTittel = document.getElementById('inputTittel');
-        let inputSpilletid = document.getElementById('inputSpilletid');
-        let inputSjanger = document.getElementById('inputSjanger');
-        let inputFavoritt = document.getElementById('inputFavoritt');
-        
+		showAddMovies();
+		let inputTittel = document.getElementById('inputTittel');
+		let inputSpilletid = document.getElementById('inputSpilletid');
+		let inputSjanger = document.getElementById('inputSjanger');
+		let inputFavoritt = document.getElementById('inputFavoritt');
+		
 	}
 	blurUnblur('gridContainer')
 }
