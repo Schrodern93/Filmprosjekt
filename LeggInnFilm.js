@@ -38,7 +38,8 @@ function LeggInn() {
         Favoritt: inputFavoritt.checked
     };
     userCollection.add(info);
-    removeMovieBox();
+	load();
+	removeMovieBox();
 }
 	//inputTittle.value = '';
 	//inputSpilletid.value = '';

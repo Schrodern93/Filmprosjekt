@@ -13,28 +13,36 @@ function load() {
             // '<ul>';
             snapshot.forEach(
                 function (FilmDataSnapshot) {
-                    
+                    let yayOrNay = '';
+                    let spilleTid = '';
                     let FilmData = FilmDataSnapshot.data();
                     let filmTittel = [FilmData.Tittel];
                     let filmSpilletid = [FilmData.Spilletid];
                     let filmSjanger = [FilmData.Sjanger];
                     let filmFavoritt = [FilmData.Favoritt];
-
+                    
                     for (i = 0; i < filmTittel.length; i++) {
 
-                        if (filmFavoritt == true) {
-                            yayOrNay = '♥';
+                        if (filmFavoritt[i] == true) {
+                            yayOrNay = '\u2665';
                         }
-                        else {
-                            yayOrNay = '♡';
+                        else yayOrNay = '\u2661';
+                        
+                        for (i = 0; i < filmSpilletid.length; i++){
+                            let timer = (filmSpilletid[i] / 60);
+                            let timerRoundOff = Math.floor(timer * 1) / 1;
+                            let minutter = (filmSpilletid[i] % 60);
+                            spilleTid = `${timerRoundOff}h ${minutter}m`;
                         }
+
+
                         html += `<div class="container">
-                                    <h3.title>${filmTittel}</h3>
-                                    <p.sjanger>${filmSjanger}</p>
-                                    <p.spilletid>${filmSpilletid}</p>
-                                    <div.favoritt>${yayOrNay}</div></div>`;
+                            <h3 class="title">${filmTittel}</h3>
+                            <p class="spilletid">${spilleTid}</p>
+                            <p class="sjanger">${filmSjanger}</p><div class="favoritt">${yayOrNay}</div>
+                        </div>`;
                     }
-        
+                        
                     gContainer.innerHTML = html;
                 });
         });

@@ -202,19 +202,22 @@ hr.addMovieHr{
 div.container{
     display: grid;        
     margin-right: 1vw;
-    align-items: center;  
-    justify-items: center;
-    width: 15vw;
-    height: 12vh;
+    grid-template-areas: 'tittel tittel spilletid',
+                        'sjanger sjanger favoritt';
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3.03fr 1fr;
+    width: 14.5vw;
+    height: 11.75vh;
     border: 0.3vh solid rgb(0, 0, 0);
     border-radius: 1.5vh;
-    color:rgb(90, 90, 90);
+    color:rgb(151, 151, 151);
     cursor: pointer;
     user-select: none;
     box-shadow: 0vh 1.4vh 10px -0.8vh rgb(0, 0, 0);
     -webkit-transition: width 0.2s, height 0.4s; /* For Safari 3.1 to 6.0 */
     transition: width 0.2s, height 0.4s, margin-bottom 0.4s;
-    margin-bottom: 1vh;
+    margin-bottom: 1.5vh;
+    text-transform: capitalize;
 }
 
 div.container:hover{
@@ -224,22 +227,55 @@ div.container:hover{
     border-width: 0.3vh;
     border-style: solid;
     border: 0.3vh solid #ac0c91a9;
-    color:rgb(192, 192, 192);
+    color:rgb(221, 221, 221);
     box-shadow: 0vh 1.4vh 1vh -0.8vh rgba(0, 0, 0, 0.671);
     
 }
 
 h3.title{
+    display: grid;
+    grid-area: 'tittel';
     text-align: left;
+    font-size: 1.17vw;
+    margin:0;
+    padding: 0;
+    overflow-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* line-break: strict; */
+    padding-left: 0.4vw;
+    padding-top: 0.75vh;
 }
 
 p.sjanger{
-
+    display: grid;
+    grid-area: 'sjanger';
+    text-align: left;
+    font-size: 1vw;
+    margin:0;
+    margin-top: 1.3vw;
+    margin-left: 0.3vw;
+    padding:0;
 }
 p.spilletid{
-
+    display: grid;
+    grid-area: 'spilletid';
+    margin:0;
+    margin-top: 0.53vw; 
+    margin-right: 0.5vw; 
+    text-align: right;
+    font-size: 1vw;
+    white-space: nowrap;
 }
 div.favoritt{
+    display: grid;
+    grid-area: 'favoritt';
+    margin: 0px;
+    text-align: right;
+    margin-right: 0.8vw;
+    margin-top: 0.65vw;
+    font-size: 1.6vw;
 
 }
 
@@ -261,6 +297,29 @@ div.favoritt{
 
 
 /* ----- Fancy shite ----- */
+
+    /* addMovieBox Animation */
+#addMovieBox{
+
+    -webkit-animation-name: falldown; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: .4s; /* Safari 4.0 - 8.0 */
+    animation-name: falldown;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+
+}
+
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes falldown {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0%);}
+  }
+  
+  /* Standard syntax */
+  @keyframes falldown {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0%);}
+  }
 
 
     /* --- Blur --- */
