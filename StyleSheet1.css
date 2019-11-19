@@ -229,6 +229,21 @@ div.container:hover{
     
 }
 
+h3.title{
+    text-align: left;
+}
+
+p.sjanger{
+
+}
+p.spilletid{
+
+}
+div.favoritt{
+
+}
+
+
 #footer{
     grid-area: footer;
     border-top: 0.2vh solid black;
