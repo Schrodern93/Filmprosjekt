@@ -9,18 +9,18 @@ function showAddMovies() {
 		<hr class="addMovieHr"/>
 			<table class="addMovieTable">
 				<tr>
-				<th>Tittel</th>
-				<th>Spilletid</th>
+				    <th>Tittel</th>
+				    <th>Spilletid</th>
 					<th>Sjanger</th>
 					<th>Favoritt</th>
-					</tr>
+				</tr>
 				<tr>
-				<td><input id="inputTittel" type="text"/></td>
-				<td><input id="inputSpilletid" type="number" /></td>
+				    <td><input id="inputTittel" type="text"/></td>
+				    <td><input id="inputSpilletid" type="number" /></td>
 					<td><input id="inputSjanger" type="text"/></td>
 					<td><input id="inputFavoritt" type="checkbox" /></td>
 					<td><input id="addMovieButton" type="button" onclick ="LeggInn()" value="Legg til film"/></td>
-					</tr>
+				</tr>
 			</table><p id="addMovieClose" onclick="removeMovieBox()">X</p>
 						
 						`;
