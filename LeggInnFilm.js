@@ -1,5 +1,8 @@
 
+let db = firebase.firestore(); // mulig const eller var
+var userCollection = db.collection('FilmData');
 function showAddMovies() {
+
 	let movieBox = document.getElementById('addMovieBox');
 	let html = `
 		<p class="addMovieHeader">Legg til film</p><br/>
@@ -21,17 +24,15 @@ function showAddMovies() {
 			</table><p id="addMovieClose" onclick="removeMovieBox()">X</p>
 						
 						`;
-	movieBox.innerHTML = html;
+    movieBox.innerHTML = html;
 }
 
-let inputTittel = document.getElementById('inputTittel');
-let inputSpilletid = document.getElementById('inputSpilletid');
-let inputSjanger = document.getElementById('inputSjanger');
-let inputFavoritt = document.getElementById('inputFavoritt');
+console.log(document.getElementById('inputTittel'));
 
-let db = firebase.firestore(); // mulig const eller var
-var userCollection = db.collection('FilmData');
-console.log(inputTittel);
+
+
+
+
 
 function LeggInn() {
     let info = {
@@ -60,7 +61,12 @@ function addMovieBox() {
 	}
 	else {
 		mContent.innerHTML += boxHTML;
-		showAddMovies();
+        showAddMovies();
+        let inputTittel = document.getElementById('inputTittel');
+        let inputSpilletid = document.getElementById('inputSpilletid');
+        let inputSjanger = document.getElementById('inputSjanger');
+        let inputFavoritt = document.getElementById('inputFavoritt');
+        
 	}
 	blurUnblur('gridContainer')
 }
