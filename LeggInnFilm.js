@@ -29,12 +29,14 @@ function showAddMovies() {
 
 
 function LeggInn() {
+    tittel = inputTittel.value;
+    sjanger = inputSjanger.value;
     let info = {
-		Tittel: inputTittel.value,
-		Spilletid: parseInt(inputSpilletid.value),
-		Sjanger: inputSjanger.value,
-		Favoritt: inputFavoritt.checked
-	};
+        Tittel: tittel.toLowerCase(),
+        Spilletid: parseInt(inputSpilletid.value),
+        Sjanger: sjanger.toLowerCase(),
+        Favoritt: inputFavoritt.checked
+    };
     userCollection.add(info);
     removeMovieBox();
 }
