@@ -301,14 +301,23 @@ div.favoritt{
     /* addMovieBox Animation */
 #addMovieBox{
 
+    /* --- Fall-down --- */
     -webkit-animation-name: falldown; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: .4s; /* Safari 4.0 - 8.0 */
     animation-name: falldown;
     animation-duration: .4s;
     animation-fill-mode: forwards;
 
+    /* --- Fade in ---  */
+    /* -webkit-animation-name: fadein; 
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadein;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards; */
+
 }
 
+/* --- Fall down --- */
   /* Safari 4.0 - 8.0 */
   @-webkit-keyframes falldown {
     from {transform: translateY(-100%);}
@@ -320,6 +329,18 @@ div.favoritt{
     from {transform: translateY(-100%);}
     to {transform: translateY(0%);}
   }
+/* --- Fade in --- */
+  /* Safari 4.0 - 8.0 */
+  /* @-webkit-keyframes fadein {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+  } */
+  
+  /* Standard syntax */
+  /* @keyframes fadein {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+  } */
 
 
     /* --- Blur --- */
