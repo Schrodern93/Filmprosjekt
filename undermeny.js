@@ -27,7 +27,7 @@
                 currentMovies.push(movie);
             }
         }
-        show();
+        load();
     }
     function extractGenres() {
         let genres = [];
